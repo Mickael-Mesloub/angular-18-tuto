@@ -19,14 +19,14 @@ import { FormsModule } from '@angular/forms';
 export class SearchBarComponent {
   // Version avec @Input() et @Output()
 
-  // @Input() searchValue: string = 'Search something';
-  // @Output() searchValueChange: EventEmitter<string> = new EventEmitter<string>();
+  // @Input() search: string = 'Search something';
+  // @Output() searchChange: EventEmitter<string> = new EventEmitter<string>();
   // @Output() searchButtonClicked: EventEmitter<void> = new EventEmitter<void>();
 
   // Version avec input() et output()
 
-  // searchValue: InputSignal<string> = input<string>('Search something');
-  // searchValueChange: OutputEmitterRef<string> = output<string>();
+  // search: InputSignal<string> = input<string>('Search something');
+  // searchChange: OutputEmitterRef<string> = output<string>();
   // searchButtonClicked: OutputEmitterRef<void> = output({ alias: 'submit' });
 
   // searchClick() {
@@ -35,11 +35,11 @@ export class SearchBarComponent {
   // }
 
   // updateSearch(value: string) {
-  //   this.searchValueChange.emit(value);
+  //   this.searchChange.emit(value);
   // }
 
-  // Version avec model -> plus besoin de updateSearch() car [(ngModel)]="searchValue" se charge automatiquement de la mise à jour de la valeur de searchValue
-  searchValue: ModelSignal<string> = model<string>('Search something');
+  // Version avec model -> plus besoin de updateSearch() car [(ngModel)]="search" se charge automatiquement de la mise à jour de la valeur de search
+  search: ModelSignal<string> = model<string>('Search something');
   searchButtonClicked: OutputEmitterRef<void> = output({ alias: 'submit' });
 
   searchClick() {
