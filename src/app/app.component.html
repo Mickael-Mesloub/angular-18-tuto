@@ -1,7 +1,6 @@
 <app-search-bar [(search)]="search" />
 <div id="card-list">
-  @for(monster of filteredMonsters(); track monster.name; let i = $index) {
-  <div>Index {{ i }}</div>
+  @for(monster of filteredMonsters(); track monster.id) {
   <app-playing-card [monster]="monster" />
   } @empty {
   <div class="center">No monsters found!</div>
@@ -14,3 +13,6 @@
   {{ filteredMonsters().length === 1 ? "monster" : "monsters" }}
 </div>
 }
+<div class="center">
+  <button (click)="addMonster()">Add generic monster</button>
+</div>
